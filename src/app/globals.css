@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-navy: #0B132B;
+  --color-navy-light: #1C2541;
+  --color-gold: #C5A059;
+  --color-gold-light: #D4AF37;
+  --color-charcoal: #2E3440;
+  --color-pearl: #F8F9FA;
+
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+
+  --tracking-tighter: -0.06em;
+  --line-height-tight: 1.2;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  --background: var(--color-pearl);
+  --foreground: var(--color-charcoal);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--color-navy);
+    --foreground: var(--color-pearl);
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--tracking-tighter);
+}
+
+/* GSAP utility classes */
+.reveal-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
