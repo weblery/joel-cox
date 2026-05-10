@@ -18,6 +18,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Joel Cox Advocates | 34 Years of Excellence",
   description: "Trusted legal firm guiding individuals and businesses through complex legal challenges with integrity, professionalism, and expertise.",
+  icons: {
+    icon: "/logo.jpeg",
+  },
 };
 
 export default function RootLayout({
